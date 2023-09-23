@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Blog_Show = async ({ promise }) => {
     const wait = await promise
     console.log(wait);

@@ -20,10 +20,12 @@ export default async function PostUser({ params }) {
     console.log(detail);
     return (
         <>
-            <div className="bg-indigo-500 mt-5 py-6 cursor-pointer text-indigo-50 rounded-md mx-4 px-6">
+            <div className="bmt-5 py-6 cursor-pointer text-indigo-50 rounded-md mx-4 px-6">
+                <div className="bg-indigo-500 mt-5 py-6 cursor-pointer text-indigo-50 rounded-md mx-4 px-6">
                 <p>Name : {detail.name}</p>
                 <p>Email : {detail.email}</p>
-                <Suspense fallback={<h2 className="text-center">loading...</h2>}>
+                </div>
+                <Suspense fallback={<h2 className="text-center text-2xl">loading...</h2>}>
                     <Blog_Show promise={usersPost} />
                 </Suspense>
             </div>
