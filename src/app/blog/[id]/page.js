@@ -11,7 +11,8 @@ const metadata = async({ params }) => {
     };
   }
   metadata();
-
+//   https://jsonplaceholder.typicode.com/posts?userId=9
+// https://jsonplaceholder.typicode.com/users/5
 export default async function PostUser({ params }) {
     const usersDetail = await UsersDetail(params.id)
     const usersPost = await UsersPost(params.id)
