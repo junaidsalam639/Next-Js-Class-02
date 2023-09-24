@@ -1,6 +1,5 @@
 const Blog_Show = async ({ promise }) => {
     const wait = await promise
-    console.log(wait);
     return (
         <div>
             {

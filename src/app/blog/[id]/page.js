@@ -3,22 +3,21 @@ import UsersPost from "@/app/userData/UserPost";
 import Blog_Show from "@/app/component/Blog_Show";
 import { Suspense } from "react";
 
-const metadata = async({ params }) => {
-    const usersDetail = await UsersDetail(params.id);
-    return {
-      title: usersDetail.name,
-      description: usersDetail.email,
-    };
+export async function generateMetadata({ params }){
+  const usersDetail = await UsersDetail(params.id);
+  return{
+    title : usersDetail.name,
+    description : usersDetail.email,
   }
-  metadata();
+}
 //   https://jsonplaceholder.typicode.com/posts?userId=9
 // https://jsonplaceholder.typicode.com/users/5
+
 export default async function PostUser({ params }) {
-    const usersDetail = await UsersDetail(params.id)
+  const usersDetail = await UsersDetail(params.id)
     const usersPost = await UsersPost(params.id)
 
     const [detail, post] = await Promise.all([usersDetail, usersPost]);
-    console.log(detail);
     return (
         <>
           <h1 className="text-center text-3xl font-bold bg-indigo-400 py-5 text-indigo-50">User_All_Blogs_Detail</h1>
