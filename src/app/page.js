@@ -1,5 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+
+export function generateMetadata(){
+  return{
+      title : 'Hello I am Junaid!',
+      description : 'I am Junaid!'
+  }
+}
 export default function Home() {
   return (
     <>
