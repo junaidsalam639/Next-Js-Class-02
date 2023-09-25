@@ -12,7 +12,7 @@ export async function generateMetadata({ params }){
 }
 //   https://jsonplaceholder.typicode.com/posts?userId=9
 // https://jsonplaceholder.typicode.com/users/5
-
+// https://dummyjson.com/products/search?q=laptop
 export default async function PostUser({ params }) {
   const usersDetail = await UsersDetail(params.id)
     const usersPost = await UsersPost(params.id)
@@ -20,9 +20,10 @@ export default async function PostUser({ params }) {
     const [detail, post] = await Promise.all([usersDetail, usersPost]);
     return (
         <>
-          <h1 className="text-center text-3xl font-bold bg-indigo-400 py-5 text-indigo-50">User_All_Blogs_Detail</h1>
-            <div className="bmt-5 py-6 cursor-pointer text-indigo-50 rounded-md mx-4 px-6">
-                <div className="bg-indigo-500 mt-5 py-6 cursor-pointer text-indigo-50 rounded-md mx-4 px-6">
+        <div className="bg-indigo-300">
+          <h1 className="text-center text-3xl font-bold bg-indigo-400 py-5 text-indigo-50 border-b-4">User_All_Blogs_Detail</h1>
+            <div className="bmt-5 py-6 cursor-pointer text-indigo-50 rounded-md px-6">
+                <div className="bg-indigo-500 mt-5 py-6 cursor-pointer text-indigo-50 rounded-md mx-4 px-6 border-b-4">
                 <p>Name : {detail.name}</p>
                 <p>Email : {detail.email}</p>
                 </div>
@@ -30,6 +31,7 @@ export default async function PostUser({ params }) {
                     <Blog_Show promise={usersPost} />
                 </Suspense>
             </div>
+        </div>
         </>
     )
 }
