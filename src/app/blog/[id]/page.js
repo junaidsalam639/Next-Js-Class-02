@@ -13,9 +13,10 @@ export async function generateMetadata({ params }){
 //   https://jsonplaceholder.typicode.com/posts?userId=9
 // https://jsonplaceholder.typicode.com/users/5
 // https://dummyjson.com/products/search?q=laptop
+
 export default async function PostUser({ params }) {
-  const usersDetail = await UsersDetail(params.id)
-    const usersPost = await UsersPost(params.id)
+  const usersDetail = UsersDetail(params.id)
+    const usersPost = UsersPost(params.id)
 
     const [detail, post] = await Promise.all([usersDetail, usersPost]);
     return (
@@ -27,7 +28,7 @@ export default async function PostUser({ params }) {
                 <p>Name : {detail.name}</p>
                 <p>Email : {detail.email}</ p>
                 </div>
-                <Suspense fallback={<h2 className="text-center text-2xl">loading...</h2>}>
+                <Suspense fallback={<h2 className="text-center text-3xl font-bold bg-indigo-800">loading...</h2>}>
                     <Blog_Show promise={usersPost} />
                 </Suspense>
             </div>
