@@ -24,10 +24,10 @@ export default function DataFecth() {
 
     return (
         <>
-            <div>
-                <form onSubmit={submit} className='text-center my-5'>
-                    <input type="text" id="input" className="border-2 border-rose-950 focus:outline-none py-1 px-2 rounded-sm" placeholder='search product Name' required />
-                    <button type="submit" className='border-2 border-rose-950 py-1 px-2 mx-2 rounded-sm bg-gray-200'>Submit</button>
+            <div className=' bg-indigo-800 py-5 sticky-top border-b-4'>
+                <form onSubmit={submit} className='text-center'>
+                    <input type="text" id="input" className="border-2 border-rose-950 focus:outline-none py-2 px-3 rounded-sm" placeholder='search product Name' required />
+                    <button type="submit" className='border-2 border-rose-950 py-2 px-3 mx-2 rounded-sm bg-gray-200'>Submit</button>
                 </form>
             </div>
             <div className="card-container flex justify-around items-center flex-wrap w-full">
